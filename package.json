@@ -1,0 +1,27 @@
+{
+  "name": "site222327",
+  "version": "1.0.0",
+  "description": "website project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/index.js",
+    "dev": "nodemon ./server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma3ti/site222327.git"
+  },
+  "author": "ma3ti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ma3ti/site222327/issues"
+  },
+  "homepage": "https://github.com/ma3ti/site222327#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
