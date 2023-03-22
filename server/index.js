@@ -1,18 +1,30 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
-const portNumber = '5000';
+
+const PORT = '5000';
+
 
 let app = express();
 
-const uri = "mongodb+srv://admin:ulUpCKpLJQ763Mvx@cluster0.r94j7ya.mongodb.net/?retryWrites=true&w=majority";
 
 
+
+/*
 app.get('/', (req, res) => {
+    res.sendFile(__dirname + '.../.../src/public/views/homepage.html');
+});*/
+
+ 
+app.get('/', function (req, res) {
     res.send('<h1> Hello World !!! </h1>');
 });
 
 
+
+//  MongoDb Connection
+/*
 async function connect(){
     try {
         await mongoose.connect(uri);
@@ -20,15 +32,13 @@ async function connect(){
         
     } catch (error) {
         console.log(error);
-        
     }
 }
 
-
 connect();
+*/
 
-
-app.listen(portNumber, () => {
+app.listen(PORT, () => {
     global.startDate = new Date() ; 
-	console.log(`App listening on port ${portNumber} started ${global.startDate.toLocaleString()}`);
+	console.log(`App listening on port ${PORT} started ${global.startDate.toLocaleString()}`);
 })
