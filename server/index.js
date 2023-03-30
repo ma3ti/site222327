@@ -1,34 +1,19 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const routes = require('./routes/routes');
+const apiRoutes = require('./routes/api_routes');
+const routes = require('./routes/route');
+const path = require('path');
 require('dotenv').config();
+const mongoDb = require('./mongo');
+const PORT = process.env.PORT;
 
-const PORT = '5000';
-const mongoUrl = process.env.MONGO_URL;
-
-//  MongoDB connection
-mongoose.connect(mongoUrl);
-const database = mongoose.connection;
-
-database.on('error', (error) => {
-    console.log(error)
-})
-
-database.once('connected', () => {
-    console.log('Database Connected');
-})
 
 // express app
 let app = express();
 
-app.use(express.json());
-app.use('/api', routes);
 
-app.get('/', function (req, res) {
-    res.send('<h1> Hello World !!! </h1>');
-});
-
-
+app.use(express.static(path.join(__dirname, '../src/public')));
+app.use('/api', apiRoutes);
+app.use('/', routes);
 
 
 app.listen(PORT, () => {
