@@ -7,7 +7,7 @@ const router = express.Router()
 // Show HOMEPAGE
 router.get('/', async (req, res) => {
     //res.send('<h1> Hello World !!! </h1>');
-    res.sendFile(path.join(__dirname, '../../src/public/views/homepage.html'))
+    res.status(200).sendFile(path.join(__dirname, '../../src/public/views/homepage.html'))
     //console.log(path.join(__dirname, '../../src/public/views/homepage.html'));
 })
 
