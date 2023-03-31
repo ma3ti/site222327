@@ -1,10 +1,11 @@
-const express = require('express');
+const express   = require('express');
 const apiRoutes = require('./routes/api_routes');
-const routes = require('./routes/route');
-const path = require('path');
+const routes    = require('./routes/route');
+const path      = require('path');
 require('dotenv').config();
-const mongoDb = require('./mongo');
-const PORT = process.env.PORT;
+const mongoDb   = require('./config/mongo');
+const mySqlDb   = require('./config/mysql');
+const PORT      = process.env.PORT;
 
 
 // express app

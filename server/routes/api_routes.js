@@ -1,7 +1,7 @@
-const express = require('express');
-const Model = require('../models/model');
+const express   = require('express');
+const Model     = require('../models/game_product_model');
 
-const router = express.Router()
+const router    = express.Router()
 
 
 
