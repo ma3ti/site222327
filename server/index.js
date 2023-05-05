@@ -5,7 +5,7 @@ const path      = require('path');
 require('dotenv').config();
 const mongoDb   = require('./config/mongo');
 const mySqlDb   = require('./config/mysql');
-const PORT      = process.env.PORT;
+const PORT      = process.env.PORT || 5000;
 
 
 // express app
